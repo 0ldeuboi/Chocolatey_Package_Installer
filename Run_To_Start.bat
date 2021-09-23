@@ -56,24 +56,24 @@ GOTO MENU
 
 :GEN
 REM Standard Suite of Apps
-choco install %currentpath%\App_Lists\standardsuite.config
+choco install %~dp0\App_Lists\standardsuite.config
 IF %M%==3 GOTO DEV
 IF %M%==4 GOTO MED
 GOTO MENU
 
 :DEV
 REM Developer Suite of Apps
-choco install %currentpath%\App_Lists\developersuite.config
+choco install %~dp0\App_Lists\developersuite.config
 GOTO MENU
 
 :MED
 REM basic apps
-choco install %currentpath%\App_Lists\mediasuite.config
+choco install %~dp0\App_Lists\mediasuite.config
 GOTO MENU
 
 :COM
 REM developer tools
-choco install %currentpath%\App_Lists\completesuite.config
+choco install %~dp0\App_Lists\completesuite.config
 GOTO MENU
 
 :UPG
