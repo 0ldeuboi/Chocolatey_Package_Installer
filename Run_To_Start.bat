@@ -19,7 +19,7 @@ ECHO ...............................................................
 ECHO.
 :MENU
 ECHO ...............................................................
-ECHO ..PRESS 1, 2, 3, 4, 5 OR 6 to select your task, or 7 to EXIT...
+ECHO ..PRESS 1, 2, 3, 4, 5, 6 OR 7 to select your task, or 8 to EXIT...
 ECHO ...............................................................
 ECHO.
 ECHO 1 - Install Chocolatey
@@ -38,7 +38,7 @@ IF %M%==1 GOTO FIR
 IF %M%==2 GOTO GEN
 IF %M%==3 GOTO DEV
 IF %M%==4 GOTO MED
-IF %M%==5 GOTO LTG
+IF %M%==5 GOTO LIG
 IF %M%==6 GOTO COM
 IF %M%==7 GOTO UPG
 IF %M%==8 GOTO EOF
@@ -76,13 +76,13 @@ REM developer tools
 choco install %~dp0\App_Lists\completesuite.config
 GOTO MENU
 
-:UPG
-choco upgrade all
-GOTO MENU
-
-:LGT
+:LIG
 REM Light Suite of Apps
 choco install %~dp0\App_Lists\lightsuite.config
+GOTO MENU
+
+:UPG
+choco upgrade all
 GOTO MENU
 
 :EOF
