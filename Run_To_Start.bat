@@ -26,9 +26,10 @@ ECHO 1 - Install Chocolatey
 ECHO 2 - Install Standard Suite of Apps
 ECHO 3 - Install Developer Suite of Apps
 ECHO 4 - Install Media Suite of Apps
-ECHO 5 - Install Complete Suite of Apps
-ECHO 6 - Upgrade Apps
-ECHO 7 - EXIT
+ECHO 5 - Install Light Suite of Apps
+ECHO 6 - Install Complete Suite of Apps
+ECHO 7 - Upgrade Apps
+ECHO 8 - EXIT
 ECHO.
 
 
@@ -37,9 +38,10 @@ IF %M%==1 GOTO FIR
 IF %M%==2 GOTO GEN
 IF %M%==3 GOTO GEN
 IF %M%==4 GOTO GEN
-IF %M%==5 GOTO COM
-IF %M%==6 GOTO UPG
-IF %M%==7 GOTO EOF
+IF %M%==5 GOTO LGT
+IF %M%==6 GOTO COM
+IF %M%==7 GOTO UPG
+IF %M%==8 GOTO EOF
 
 
 
@@ -78,6 +80,11 @@ GOTO MENU
 
 :UPG
 choco upgrade all
+GOTO MENU
+
+:LGT
+REM Light Suite of Apps
+choco install %~dp0\App_Lists\lightsuite.config
 GOTO MENU
 
 :EOF
