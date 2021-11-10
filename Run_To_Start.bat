@@ -33,12 +33,12 @@ ECHO 8 - EXIT
 ECHO.
 
 
-SET /P M=Type 1, 2, 3, 4, 5, 6 or 7 and then press ENTER:
+SET /P M=Type 1, 2, 3, 4, 5, 6, 7 or 8 and then press ENTER:
 IF %M%==1 GOTO FIR
 IF %M%==2 GOTO GEN
-IF %M%==3 GOTO GEN
-IF %M%==4 GOTO GEN
-IF %M%==5 GOTO LGT
+IF %M%==3 GOTO DEV
+IF %M%==4 GOTO MED
+IF %M%==5 GOTO LTG
 IF %M%==6 GOTO COM
 IF %M%==7 GOTO UPG
 IF %M%==8 GOTO EOF
@@ -59,8 +59,6 @@ GOTO MENU
 :GEN
 REM Standard Suite of Apps
 choco install %~dp0\App_Lists\standardsuite.config
-IF %M%==3 GOTO DEV
-IF %M%==4 GOTO MED
 GOTO MENU
 
 :DEV
